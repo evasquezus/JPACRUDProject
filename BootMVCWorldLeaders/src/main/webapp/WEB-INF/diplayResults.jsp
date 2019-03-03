@@ -14,64 +14,107 @@
 </head>
 
 <body>
-	<nav class="navbar sticky-top navbar-light bg-light" id="navbar">
-		<a href="WEB-INF/index.jsp">Home</a> <a href="WEB-INF/index.jsp">DisplayAll</a>
-	</nav>
-	<Strong><h1>Displaying Results</h1></Strong>
-	<br>
-	<div class="card" style="width: 18rem;">
-		<img class="card-img-top"
-			src="https://i.ytimg.com/vi/LbI5gCZq_SY/maxresdefault.jpg"
-			alt="leaderImage">
 
-		<ul class="list-group list-group-flush">
-			<li class="list-group-item"><p>First Name :
-					${leader.firstName}</p></li>
-			<li class="list-group-item"><p>Last Name :
-					${leader.lastName}</p></li>
-			<li class="list-group-item"><p>Gender : ${leader.gender}</p></li>
-			<li class="list-group-item"><p>Country : ${leader.country}</p></li>
-			<li class="list-group-item"><p>Date of Birth :
-					${leader.dateOfBirth}</p></li>
-			<li class="list-group-item"><p>Birth Place :
-					${leader.birthPlace}</p></li>
-		</ul>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Displaying Results</h1>
+  </div>
+</div>
 
-		<h3>Edit this leader?</h3>
-		<input type="hidden" name="leaderID" value="${leader.id}" />
-		<form action="editLeader.do" method="POST" name="leaderID">
-			<p>
+	<table class="table table-hover table-dark">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">First</th>
+				<th scope="col">Last</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Country</th>
+				<th scope="col">DOB</th>
+				<th scope="col">Birth Place</th>
 
-				First Name: <input type="text" name="firstName"> <br>
-				Last Name: <input type="text" name="lastName"> <br>
-				Gender: <input type="text" name="gender"> <br> Country:
-				<input type="text" name="country"> <br> Date of Birth:
-				<input type="text" name="dateOfBirth"> <br> Birth
-				Place: <input type="text" name="birthPlace"> <br> <input
-					type="hidden" name="leaderID" value="${leader.id}" /> <input
-					type="hidden" name="leaderID" value="${leader.id}" /> <br> <input
-					type="submit" value="Edit Leader" /> <br>
-		</form>
-		</p>
-		</form>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>${leader.firstName}</td>
+				<td>${leader.lastName}</td>
+				<td>${leader.gender}</td>
+				<td>${leader.country}</td>
+				<td>${leader.dateOfBirth}</td>
+				<td>${leader.birthPlace}</td>
+			</tr>
+		</tbody>
+	</table>
 
-		<h3>Delete a leader?</h3>
-		<form action="deleteLeader.do" method="POST" name="leaderID">
-			<input type="text" name="leaderID" value="Provide an ID" /> <input
-				type="submit" name="filmID" value="Delete Leader" />
-		</form>
 
-		<h3>Add new leader?</h3>
-		<form action="addLeader.do" method="POST" name="leaderID">
-			First Name: <input type="text" name="firstName"> <br>
-			Last Name: <input type="text" name="lastName"> <br>
-			Gender: <input type="text" name="gender"> <br> Country:
-			<input type="text" name="country"> <br> Date of Birth: <input
-				type="text" name="dateOfBirth"> <br> Birth Place: <input
-				type="text" name="birthPlace"> <br> <input
-				type="hidden" name="leaderID" value="${leader.id}" /> <input
-				type="submit" name="filmID" value="Add Leader" />
-		</form>
+	<div class="card-group">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Add Leader</h5>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button"
+						id="dropdownMenuButton" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Add Leader</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<form action="addLeader.do" method="POST" name="leaderID">
+							First Name: <input type="text" name="firstName"> <br>
+							Last Name: <input type="text" name="lastName"> <br>
+							Gender: <input type="text" name="gender"> <br>
+							Country: <input type="text" name="country"> <br>
+							Date of Birth: <input type="text" name="dateOfBirth"> <br>
+							Birth Place: <input type="text" name="birthPlace"> <br>
+							<input type="hidden" name="leaderID" value="${leader.id}" /> <input
+								type="submit" name="filmID" value="Add Leader" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Edit Leader</h5>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button"
+						id="dropdownMenuButton" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Edit Leader</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<input type="hidden" name="leaderID" value="${leader.id}" />
+						<form action="editLeader.do" method="POST" name="leaderID">
+							<p>
+
+								First Name: <input type="text" name="firstName"> <br>
+								Last Name: <input type="text" name="lastName"> <br>
+								Gender: <input type="text" name="gender"> <br>
+								Country: <input type="text" name="country"> <br>
+								Date of Birth: <input type="text" name="dateOfBirth"> <br>
+								Birth Place: <input type="text" name="birthPlace"> <br>
+								<input type="hidden" name="leaderID" value="${leader.id}" /> <input
+									type="hidden" name="leaderID" value="${leader.id}" /> <br>
+								<input type="submit" value="Edit Leader" /> <br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Delete Leader</h5>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button"
+						id="dropdownMenuButton" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Delete Leader</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<form action="deleteLeader.do" method="POST" name="leaderID">
+							<input type="text" name="leaderID" value="Provide an ID" /> <input
+								type="submit" name="filmID" value="Delete Leader" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

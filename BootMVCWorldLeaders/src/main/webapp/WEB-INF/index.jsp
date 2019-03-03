@@ -10,13 +10,26 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<link href="../css/myStyles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="container-fluid">
+
+	<div class="jumbotron text-center">
+		<h1>Company</h1>
+		<p>We specialize in blablabla</p>
+		<form class="form-inline">
+			<div class="input-group"></div>
+	</div>
+	</form>
+	</div>
+	<div class="container-fluid text-center">
 		<form action="getLeader.do" method="GET">
 			Leader ID: <input type="number" name="leader" /> <input
 				class="btn btn-primary" type="submit" value="Submit">
 		</form>
+
+
+
 
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
