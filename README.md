@@ -8,12 +8,12 @@ Delete a leader from the database
 Edit a leader
 
 ### Technologies / Topics
-*Spring Boot MVC
-*JSP Java 
-*SQL/mySQL
-*Spring Boot MVC
-*JPQL
-*Gradle 
-*HTML
-*CSS
-*Bootstrap 
+* Spring Boot MVC
+* JSP Java 
+* SQL/mySQL
+* Spring Boot MVC
+* JPQL
+* Gradle 
+* HTML
+* CSS
+* Bootstrap 
