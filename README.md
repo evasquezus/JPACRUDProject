@@ -1,7 +1,7 @@
 ## Spring JPA CRUD Project
 #This Week 8 Skill Distillery weekend project
 
-![Operations](/crud.png)
+![Operations](images/crud.png)
 Users have the option to :
 * Add a new leader to the database
 * Delete a leader from the database
